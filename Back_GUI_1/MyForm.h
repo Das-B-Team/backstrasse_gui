@@ -221,9 +221,10 @@ namespace BackGUI1 {
 			this->label1_anz_blae->AutoSize = true;
 			this->label1_anz_blae->Location = System::Drawing::Point(189, 47);
 			this->label1_anz_blae->Name = L"label1_anz_blae";
-			this->label1_anz_blae->Size = System::Drawing::Size(89, 13);
+			this->label1_anz_blae->Size = System::Drawing::Size(120, 13);
 			this->label1_anz_blae->TabIndex = 1;
-			this->label1_anz_blae->Text = L"Anzahl Plätzchen";
+			this->label1_anz_blae->Text = L"Anzahl Plätzchen TEST";
+			this->label1_anz_blae->Click += gcnew System::EventHandler(this, &MyForm::Label1_anz_blae_Click);
 			// 
 			// button1_vorschau
 			// 
@@ -802,5 +803,7 @@ namespace BackGUI1 {
 	private: System::Void radioButton3_Quadrat_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void radioButton4_Kreis_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button1_konfig_schreiben_Click(System::Object^ sender, System::EventArgs^ e);
-	};
+	private: System::Void Label1_anz_blae_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
