@@ -221,9 +221,9 @@ namespace BackGUI1 {
 			this->label1_anz_blae->AutoSize = true;
 			this->label1_anz_blae->Location = System::Drawing::Point(189, 47);
 			this->label1_anz_blae->Name = L"label1_anz_blae";
-			this->label1_anz_blae->Size = System::Drawing::Size(89, 13);
+			this->label1_anz_blae->Size = System::Drawing::Size(120, 13);
 			this->label1_anz_blae->TabIndex = 1;
-			this->label1_anz_blae->Text = L"Anzahl Plätzchen";
+			this->label1_anz_blae->Text = L"Anzahl Plätzchen TEST";
 			// 
 			// button1_vorschau
 			// 
