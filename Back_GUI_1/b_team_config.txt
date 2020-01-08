@@ -1,11 +1,11 @@
 #Bezeichnung|Anzahl|X|Y|Backzeit|Backtemperatur|Form
-|Plaetzchen|121|22|11|25|180|Stern|
+|Plaetzchen|23|23|23|25|190|Stern|
 #Bezeichnung|Mehl|Milch|Eier|Backpulver|Zucker|Nuesse|Kakao|
-|Teig|1,68654196662545|0,446933971663713|0,00527007643187046|1,47572234217542|0|0|
-#Bezeichnung|Verzierung|No|Mehl|Zucker|Nuesse|Farbe
-|Verzierung|Streusel|0|4,538952|0,5547608|0|Weiss|
-#Gesamt Angaben in KG
-#Bezeichnung|Mehl|Milch|Eier|Backpulver|Zucker|Nuesse|Kakao|
-|Gesamt|0,7532848|0,04591614|0,05407901|0,0006376792|0,2456885|0|0|
+|Teig|3,68669723735428|0,976975534091949|0,0115201261554718|3,22585597611065|0|0|
+#Verzierung|No|Mehl|Zucker|Nuesse|Farbe
+|Streusel|0|9,921925|1,21268|0|Gruen|
+#Gesammt Angaben in KG
+#|Mehl|Milch|Eier|Backpulver|Zucker|Nuesse|Kakao|
+|0,3129983|0,01907868|0,02247044|0,0002649629|0,1020863|0|0|
 #Bezeichnung|Anzahl|
 |Backblech|1|

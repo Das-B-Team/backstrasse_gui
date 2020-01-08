@@ -460,17 +460,16 @@ void BackGUI1::MyForm::createConfig_backstrasse()
 	    + "#Bezeichnung|Mehl|Milch|Eier|Backpulver|Zucker|Nuesse|Kakao|\n"
 		+ "|" + "Teig" + "|" + p->getTeig()->getMehl().ToString() + "|" + p->getTeig()->getEier().ToString() + "|" + p->getTeig()->getBackpulver() + "|"
 		+ p->getTeig()->getZucker().ToString() + "|" + p->getTeig()->getNuesse().ToString() + "|" + p->getTeig()->getKakao().ToString() + "|\n"
-		+ "#Bezeichnung|Verzierung|No|Mehl|Zucker|Nuesse|Farbe\n";
+		+ "#Verzierung|No|Mehl|Zucker|Nuesse|Farbe\n";
 	int index=0;
 	   for each (auto v in p->getVerzierung())
 	{
 		  
-		Config_backstrasse += "|Verzierung|" + v->getName()+ "|" + index.ToString()+ "|"+v->getMehl().ToString()+"|"+ v->getZucker().ToString()
+		Config_backstrasse += "|" + v->getName()+ "|" + index.ToString()+ "|"+v->getMehl().ToString()+"|"+ v->getZucker().ToString()
 			+"|"+ v->getNuesse().ToString()+"|"+ getColor_as_String(v->getFarbe())+ "|\n";
 		index++;
 	}
-	   Config_backstrasse += "#Gesamt Angaben in KG\n#Bezeichnung|Mehl|Milch|Eier|Backpulver|Zucker|Nuesse|Kakao|\n";
-	   Config_backstrasse += "|Gesamt";
+	   Config_backstrasse += "#Gesammt Angaben in KG\n#|Mehl|Milch|Eier|Backpulver|Zucker|Nuesse|Kakao|\n";
 	   Single gesamtmehl = System::Convert::ToSingle(textBox1_anz_blaetz->Text) * p->getTeig()->getMehl(); //Mehl des Teigs
 	   for each (auto v in p->getVerzierung())
 	   {

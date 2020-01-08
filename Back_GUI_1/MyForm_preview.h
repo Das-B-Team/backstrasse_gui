@@ -9,6 +9,7 @@ namespace BackGUI1 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Drawing::Drawing2D;
 
 	/// <summary>
 	/// Zusammenfassung für MyForm_preview
