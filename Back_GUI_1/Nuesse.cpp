@@ -17,7 +17,10 @@ Single Nuesse::getNuesse()
 
 String^ Nuesse::getName()
 {
-	//throw gcnew System::NotImplementedException();
-	// TODO: insert return statement here
+	
 	return s;
+}
+Verzierung::Color Nuesse::getFarbe()
+{
+	return color;
 }

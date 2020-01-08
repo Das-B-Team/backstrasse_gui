@@ -61,7 +61,7 @@ namespace BackGUI1 {
 			// 
 			// button1_ok
 			// 
-			this->button1_ok->Location = System::Drawing::Point(95, 194);
+			this->button1_ok->Location = System::Drawing::Point(92, 216);
 			this->button1_ok->Name = L"button1_ok";
 			this->button1_ok->Size = System::Drawing::Size(75, 23);
 			this->button1_ok->TabIndex = 0;
@@ -73,10 +73,11 @@ namespace BackGUI1 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->ClientSize = System::Drawing::Size(268, 261);
 			this->Controls->Add(this->button1_ok);
 			this->Name = L"MyForm_preview";
-			this->Text = L"MyForm_preview";
+			this->Text = L"Vorschau";
 			this->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm_preview::MyForm_preview_Paint);
 			this->ResumeLayout(false);
 

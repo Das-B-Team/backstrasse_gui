@@ -7,7 +7,7 @@ ref class Nuesse :
 private:
     String^ s = "Nuesse";
 	Color color;
-	const Single nuts = 0.11;
+	const Single nuts = 0.08965;
 	Plaetzchen^ p;
 public:
 	/**Constructor  to create a Nuesse object
@@ -23,5 +23,6 @@ public:
 	virtual Single getNuesse() override;
 	/**give back the String "Nuesse" */
 	virtual String^ getName() override;
+	virtual Color getFarbe() override;
 };
 

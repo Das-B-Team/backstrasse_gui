@@ -4,8 +4,14 @@
 #include "Guss.h"
 #include "Streusel.h"
 #include "Nuesse.h"
+#include "Backblech.h"
+#include "Datei.h"
 
+//using namespace msclr::interop;
+//using namespace std;
+using namespace System::IO;
 namespace BackGUI1 {
+
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -14,6 +20,7 @@ namespace BackGUI1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Text::RegularExpressions;
+	
 
 	
 	/// <summary>
@@ -125,6 +132,8 @@ namespace BackGUI1 {
 	private: System::Windows::Forms::RadioButton^ radioButton1_Verz2_Nuesse;
 	private: System::Windows::Forms::RadioButton^ radioButton2_Verz2_Streusel;
 	private: System::Windows::Forms::RadioButton^ radioButton3_Verz2_Guss;
+private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 
 
 
@@ -135,11 +144,14 @@ namespace BackGUI1 {
 		/// </summary>
 		System::ComponentModel::Container^ components;
 		Verzierung::Color getColor_as_enum(String^ s);
+		String^ getColor_as_String(Verzierung::Color);
 		Verzierung ^v1, ^v2, ^v3;
 		System::Void showStatusMsg(String^);
 		System::Void clearStatusMsg();
 		Plaetzchen^ createPlaetzchen();
+		void createConfig_backstrasse();
 		Plaetzchen^ p;
+		String^ Config_backstrasse;
 
 
 #pragma region Windows Form Designer generated code
@@ -200,12 +212,14 @@ namespace BackGUI1 {
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->button1_konfig_schreiben = (gcnew System::Windows::Forms::Button());
 			this->button1_Exit = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->groupBox1_form_teig->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2_Verzierung->SuspendLayout();
 			this->groupBox3_Verz3->SuspendLayout();
 			this->groupBox2_Verz2->SuspendLayout();
 			this->groupBox2_Verz_1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// textBox1_anz_blaetz
@@ -514,7 +528,7 @@ namespace BackGUI1 {
 			this->groupBox3_Verz3->Controls->Add(this->radioButton4_Verz3_Nuesse);
 			this->groupBox3_Verz3->Controls->Add(this->radioButton5_Verz3_Streusel);
 			this->groupBox3_Verz3->Controls->Add(this->radioButton6_Verz3_Guss);
-			this->groupBox3_Verz3->Location = System::Drawing::Point(60, 9);
+			this->groupBox3_Verz3->Location = System::Drawing::Point(60, 19);
 			this->groupBox3_Verz3->Name = L"groupBox3_Verz3";
 			this->groupBox3_Verz3->Size = System::Drawing::Size(167, 62);
 			this->groupBox3_Verz3->TabIndex = 12;
@@ -570,7 +584,7 @@ namespace BackGUI1 {
 			this->groupBox2_Verz2->Controls->Add(this->radioButton1_Verz2_Nuesse);
 			this->groupBox2_Verz2->Controls->Add(this->radioButton2_Verz2_Streusel);
 			this->groupBox2_Verz2->Controls->Add(this->radioButton3_Verz2_Guss);
-			this->groupBox2_Verz2->Location = System::Drawing::Point(60, 70);
+			this->groupBox2_Verz2->Location = System::Drawing::Point(60, 81);
 			this->groupBox2_Verz2->Name = L"groupBox2_Verz2";
 			this->groupBox2_Verz2->Size = System::Drawing::Size(167, 62);
 			this->groupBox2_Verz2->TabIndex = 11;
@@ -626,7 +640,7 @@ namespace BackGUI1 {
 			this->groupBox2_Verz_1->Controls->Add(this->radioButton3_Verz1_Nuesse);
 			this->groupBox2_Verz_1->Controls->Add(this->radioButton2_Verz1_Streusel);
 			this->groupBox2_Verz_1->Controls->Add(this->radioButton1_Verz1_Guss);
-			this->groupBox2_Verz_1->Location = System::Drawing::Point(60, 133);
+			this->groupBox2_Verz_1->Location = System::Drawing::Point(60, 142);
 			this->groupBox2_Verz_1->Name = L"groupBox2_Verz_1";
 			this->groupBox2_Verz_1->Size = System::Drawing::Size(167, 62);
 			this->groupBox2_Verz_1->TabIndex = 10;
@@ -725,8 +739,9 @@ namespace BackGUI1 {
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->ReadOnly = true;
 			this->textBox5->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->textBox5->Size = System::Drawing::Size(675, 20);
+			this->textBox5->Size = System::Drawing::Size(675, 39);
 			this->textBox5->TabIndex = 11;
+			this->textBox5->WordWrap = false;
 			// 
 			// button1_konfig_schreiben
 			// 
@@ -750,12 +765,22 @@ namespace BackGUI1 {
 			this->button1_Exit->UseVisualStyleBackColor = false;
 			this->button1_Exit->Click += gcnew System::EventHandler(this, &MyForm::button1_Exit_Click);
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(411, 14);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(283, 135);
+			this->pictureBox1->TabIndex = 14;
+			this->pictureBox1->TabStop = false;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::LightYellow;
 			this->ClientSize = System::Drawing::Size(733, 615);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button1_Exit);
 			this->Controls->Add(this->button1_konfig_schreiben);
 			this->Controls->Add(this->textBox5);
@@ -779,6 +804,7 @@ namespace BackGUI1 {
 			this->groupBox2_Verz2->PerformLayout();
 			this->groupBox2_Verz_1->ResumeLayout(false);
 			this->groupBox2_Verz_1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -802,5 +828,6 @@ namespace BackGUI1 {
 	private: System::Void radioButton3_Quadrat_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void radioButton4_Kreis_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button1_konfig_schreiben_Click(System::Object^ sender, System::EventArgs^ e);
-	};
+	
+};
 }

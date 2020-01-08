@@ -47,10 +47,26 @@ Single Plaetzchen::getGroesseY()
 bool Plaetzchen::hat_verzierung()
 {
 	return verzierung->Count ? true : false ;
+
 	
 }
 
 Single Plaetzchen::berecheGewicht()
 {
 	return GroesseX * GroesseY * wight_per_mm2;
+}
+
+String^ Plaetzchen::getShape_as_String()
+{
+	switch(shape)
+	{
+	case Stern:
+		return "Stern";
+	case Gringel:
+		return "Gringel";
+	case Rund:
+		return "Rund";
+	case Quadrat:
+		return "Quadrat";
+	}
 }

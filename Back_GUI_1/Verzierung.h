@@ -17,6 +17,7 @@ public:
 	virtual Single getMehl()=0;
 	virtual Single getZucker()=0;
 	virtual Single getNuesse()=0; //make this class to a abstract base class f.. windows :-(
+	virtual Color getFarbe()=0;
 	
 };
 

@@ -67,6 +67,10 @@ public:
 	40mm x 40mm ~ 33g cookie weight
 	Return: Single (float) weight of one cookie*/
 	Single berecheGewicht();
+	/** getShape_as_String
+	 Parameter: none
+	 Return: the shape as a String i.e "Stern"*/
+	String ^ getShape_as_String();
 
 	
 };

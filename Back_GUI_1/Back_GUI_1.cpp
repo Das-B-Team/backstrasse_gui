@@ -8,6 +8,7 @@
 #include "Backblech.h"
 
 
+
 using namespace BackGUI1;
 using namespace System;
 
@@ -18,8 +19,8 @@ int main()
 	MyForm^ mf = gcnew MyForm();
 	mf->ShowDialog();
 	
-	/* my testing-----------------------------------------------------------------
-	Plaetzchen^ pl = gcnew Plaetzchen(45.0, 40.0, 35.0, 250.0, Stern, true);
+	/* my testing----------------------------------------------------------------- 
+	Plaetzchen^ pl = gcnew Plaetzchen(15.0, 15.0, 35.0, 250.0, Stern, true);
 	Verzierung^ deco = gcnew Guss(pl, Guss::Color::White);
 	pl->addVerzierung(deco);
 	Verzierung^ deco2 = gcnew Nuesse(pl, Nuesse::Color::White);

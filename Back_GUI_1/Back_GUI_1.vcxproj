@@ -93,8 +93,9 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Windows</SubSystem>
-      <EntryPointSymbol>main</EntryPointSymbol>
+      <SubSystem>NotSet</SubSystem>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -135,6 +136,8 @@
   <ItemGroup>
     <ClCompile Include="Backblech.cpp" />
     <ClCompile Include="Back_GUI_1.cpp" />
+    <ClCompile Include="Datei.cpp" />
+    <ClCompile Include="Dateiexeption.cpp" />
     <ClCompile Include="Guss.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyForm_preview.cpp" />
@@ -146,6 +149,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Backblech.h" />
+    <ClInclude Include="Datei.h" />
+    <ClInclude Include="Dateiexeption.h" />
     <ClInclude Include="Form.h" />
     <ClInclude Include="Guss.h" />
     <ClInclude Include="MyForm.h">
