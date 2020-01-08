@@ -2,8 +2,7 @@
 #include "Verzierung.h"
 #include "Plaetzchen.h"
 
-ref class Guss :
-	public Verzierung
+ref class Guss : public Verzierung
 {
 private:
     String^ s = "Guss";
@@ -13,6 +12,7 @@ private:
 public:
 	/**Constructor  to create a Guss object
 	Parameter: p pointer to Plaetzchen where this Verzierung belongs*/
+
 	Guss(Plaetzchen^ pl, Color c) : p{ pl }, color { c }{}
 	/**Return: always 0.0*/
 	virtual Single getMehl() override;
