@@ -26,7 +26,7 @@ public:
 	virtual String^ getName() override;
 	/**getFarbe() return the Color for the 'Streusel'
 	Return: enum Color*/
-	Verzierung::Color getFarbe();
+	virtual Verzierung::Color getFarbe() override;
 	/** set the Color of the 'Streusel' 
 	Return: void */
 	void setFarbe(Color c);

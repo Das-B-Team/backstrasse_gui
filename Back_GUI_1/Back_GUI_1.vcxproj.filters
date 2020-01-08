@@ -45,6 +45,12 @@
     <ClCompile Include="Backblech.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Datei.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Dateiexeption.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -75,6 +81,12 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Backblech.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Datei.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Dateiexeption.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
